@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>Share Your Opinions & Earn Rewards</title>
+    <style>
+        /* ----- Reset & Base ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #f4f6fb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 520px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 32px;
+            padding: 40px 28px 32px;
+            box-shadow: 0 12px 48px rgba(0, 20, 50, 0.08);
+            text-align: center;
+            border: 1px solid #e9edf4;
+        }
+
+        /* ----- Brand Badge ----- */
+        .brand-badge {
+            display: inline-block;
+            background: #eef3ff;
+            color: #1a4cff;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 6px 18px;
+            border-radius: 40px;
+            letter-spacing: 0.5px;
+            margin-bottom: 18px;
+            border: 1px solid #d0ddff;
+        }
+        .brand-badge::before {
+            content: "🏛️ ";
+        }
+
+        /* ----- Headline ----- */
+        h1 {
+            font-size: 30px;
+            font-weight: 800;
+            color: #0a1a3a;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+        h1 span {
+            color: #1a4cff;
+        }
+
+        /* ----- Sub-headline ----- */
+        .subhead {
+            font-size: 17px;
+            color: #3d4e6b;
+            line-height: 1.5;
+            margin-bottom: 22px;
+            font-weight: 400;
+        }
+
+        /* ----- Feature List (Rewards-focused) ----- */
+        .feature-grid {
+            background: #f8faff;
+            border-radius: 18px;
+            padding: 18px 16px;
+            text-align: left;
+            margin-bottom: 24px;
+            border: 1px solid #eef2f9;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 15px;
+            color: #1a2a4a;
+            padding: 10px 0;
+            border-bottom: 1px solid #e9eef6;
+        }
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+        .feature-item .icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            background: #1a4cff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        /* ----- Age Restriction Notice ----- */
+        .age-notice {
+            display: inline-block;
+            background: #fff4e5;
+            color: #b45a0c;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 4px 16px;
+            border-radius: 30px;
+            margin-bottom: 18px;
+            border: 1px solid #ffe0b5;
+        }
+        .age-notice::before {
+            content: "🟢 ";
+        }
+
+        /* ----- CTA Button ----- */
+        .cta-btn {
+            display: block;
+            width: 100%;
+            background: #1a4cff;
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 18px 20px;
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s ease;
+            margin: 8px 0 18px;
+            box-shadow: 0 6px 20px rgba(26, 76, 255, 0.30);
+        }
+        .cta-btn:hover {
+            background: #0f3fd9;
+        }
+        .cta-btn:active {
+            transform: scale(0.97);
+        }
+
+        /* ----- Trust Row ----- */
+        .trust-row {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            font-size: 13px;
+            color: #5a6e8a;
+            margin: 10px 0 14px;
+            flex-wrap: wrap;
+        }
+        .trust-row span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* ----- Disclaimer (Critical for compliance) ----- */
+        .disclaimer {
+            font-size: 12px;
+            color: #8a9bb5;
+            line-height: 1.6;
+            background: #f8faff;
+            padding: 14px 16px;
+            border-radius: 14px;
+            margin: 14px 0 8px;
+            border: 1px solid #eef2f9;
+            text-align: left;
+        }
+        .disclaimer strong {
+            color: #1a2a4a;
+        }
+        .disclaimer a {
+            color: #1a4cff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .disclaimer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ----- Footer ----- */
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            font-size: 12px;
+            color: #8a9bb5;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: #8a9bb5;
+            text-decoration: none;
+        }
+        .footer-links a:hover {
+            color: #1a4cff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Brand Trust Badge -->
+    <div class="brand-badge">Ipsos – Global Research Leader</div>
+
+    <!-- Headline -->
+    <h1>Shape the Future. <span>Share Your Opinions.</span></h1>
+
+    <!-- Sub-headline -->
+    <p class="subhead">
+        Join a trusted community where your voice influences top brands – and you get rewarded for it.
+    </p>
+
+    <!-- Feature List (NO "cash" or "job" language) -->
+    <div class="feature-grid">
+        <div class="feature-item">
+            <span class="icon">💬</span>
+            <span>Share your views on products &amp; services you use daily</span>
+        </div>
+        <div class="feature-item">
+            <span class="icon">🎁</span>
+            <span>Earn rewards and enter to win exciting prizes</span>
+        </div>
+        <div class="feature-item">
+            <span class="icon">🌏</span>
+            <span>Help shape decisions for societies, citizens, and brands</span>
+        </div>
+    </div>
+
+    <!-- Age Restriction (to pre-qualify visitors) -->
+    <div class="age-notice">Open to participants aged 25+</div>
+
+    <!-- CTA Button -->
+    <a href="#" id="ctaButton" class="cta-btn">→ Join Now – It's Free</a>
+
+    <!-- Trust Signals -->
+    <div class="trust-row">
+        <span>🔒 Secure &amp; private</span>
+        <span>⏱️ 5‑min surveys</span>
+        <span>🏅 Trusted by millions</span>
+    </div>
+
+    <!-- Disclaimer (Explicitly states it's NOT a job) -->
+    <div class="disclaimer">
+        <strong>Disclaimer:</strong> This is a rewards community, not a job or employment opportunity.
+        Participants earn rewards and prizes for sharing opinions. Subject to eligibility and terms.
+        <a href="#" onclick="alert('Privacy Policy: Your data is protected.'); return false;">Privacy</a>
+        &amp;
+        <a href="#" onclick="alert('Terms of Service apply.'); return false;">Terms</a>.
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-links">
+        <a href="#" onclick="alert('Contact: support@ipsoscommunity.com'); return false;">Contact</a>
+        <a href="#" onclick="alert('© 2026 Ipsos'); return false;">© 2026</a>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // ----- CONFIGURATION (EDIT THIS) -----
+        // 🔥 REPLACE with your actual MaxBounty tracking link for Ipsos (ID: 19891)
+        const TRACKING_LINK = "YOUR_TRACKING_LINK_HERE";
+        // --------------------------------------
+
+        function getOfferUrl() {
+            if (!TRACKING_LINK || TRACKING_LINK === "YOUR_TRACKING_LINK_HERE") {
+                alert("⚠️ Please set your tracking link in the HTML.");
+                return '#';
+            }
+            return TRACKING_LINK;
+        }
+
+        const cta = document.getElementById('ctaButton');
+        cta.addEventListener('click', function(e) {
+            e.preventDefault();
+            const url = getOfferUrl();
+            if (url !== '#') {
+                cta.textContent = 'Redirecting...';
+                cta.style.opacity = '0.7';
+                cta.style.pointerEvents = 'none';
+                setTimeout(function() {
+                    window.location.href = url;
+                }, 300);
+            }
+        });
+
+        console.log('Tracking URL:', getOfferUrl());
+    })();
+</script>
+
+</body>
+</html>
